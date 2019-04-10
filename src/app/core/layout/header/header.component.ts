@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class HeaderComponent implements OnInit {
-
+  public formHomeActive = true;
+  public formProjectsActive = false;
   constructor() { }
 
   ngOnInit() {
