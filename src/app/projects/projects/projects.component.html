@@ -7,11 +7,14 @@
              [value]="listPro.id"
              type="radio"
              [(ngModel)]="idSelected" />
-      <i>{{listPro.name}}</i>
+      <span>{{listPro.name}}</span>
     </div>
 
     <a [routerLink]="['project/'+idSelected]"
        class="button"> <span> Ver proyecto</span> </a>
+
+    <a [routerLink]="['project/new']"
+       class="button"> <span> Nuevo proyecto</span> </a>
 
   </section>
 </div>
