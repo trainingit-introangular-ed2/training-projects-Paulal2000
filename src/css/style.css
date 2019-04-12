@@ -68,10 +68,10 @@ h2.txt-newsletters { background-image: url(images/txt-newsletters.gif); }
 
 #slider .slider-controls { position: absolute; bottom: 10px; right: 10px; z-index: 100; }
 
-#slider-holder { height: 150px; }
-#slider-holder .jcarousel-clip { width: 958px; height: 150px; position: relative; overflow: hidden; }
-#slider-holder ul { width: 958px; height: 150px; position: relative; overflow: hidden; }
-#slider-holder ul li { list-style-type: none; float: left; display: inline; height: 150px; width: 868px; padding: 4px 4px 4px; }
+#slider-holder { height: 80px; }
+#slider-holder .jcarousel-clip { width: 958px; height: 80px; position: relative; overflow: hidden; }
+#slider-holder ul { width: 958px; height: 80px; position: relative; overflow: hidden; }
+#slider-holder ul li { list-style-type: none; float: left; display: inline; height: 80px; width: 868px; padding: 4px 4px 4px; }
 #slider-holder .slide-info { float: left; display: inline; width: 475px; padding-top: 4px; }
 #slider-holder .slide-image { float: right; display: inline; }
 #slider-holder .slide-info h2 { font-size: 31px; line-height: 1; color: #899464; text-transform: uppercase; font-weight: normal; margin-bottom: 8px; }
