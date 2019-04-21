@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments/environment';
- 
-let projects = environment.projects; 
+
 
 @Component({
   selector: 'app-home',
@@ -10,12 +8,12 @@ let projects = environment.projects;
 })
 export class HomeComponent implements OnInit {
   public homeClass = 'content';
-  public numProjects: number;
+  
 
   constructor() { }
 
   ngOnInit() {
-    this.numProjects = projects.length;
+    
   }
 
 }

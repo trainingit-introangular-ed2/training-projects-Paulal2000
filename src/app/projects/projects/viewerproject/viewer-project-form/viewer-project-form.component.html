@@ -1,0 +1,7 @@
+<div *ngIf="mensajeError==''">
+  <h2>Proyecto de identificador: {{ projectId }}</h2>
+  <h3>{{ projectName }}</h3>
+</div>
+<div *ngIf="mensajeError!=''">
+  <h2>{{mensajeError}}</h2>
+</div>

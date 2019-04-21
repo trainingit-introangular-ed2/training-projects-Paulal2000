@@ -1,0 +1,18 @@
+<div class="top">&nbsp;</div>
+<h3>LISTA DE PROYECTOS:</h3>
+<section>
+  <div *ngFor="let listPro of listaProjects">
+    <input name="listPro.id"
+           [value]="listPro.id"
+           type="radio"
+           [(ngModel)]="idSelected" />
+    <span>{{listPro.name}}</span>
+  </div>
+
+  <a [routerLink]="['project/'+idSelected]"
+     class="button"> <span> Ver proyecto</span> </a>
+
+  <a [routerLink]="['project/new']"
+     class="button"> <span> Nuevo proyecto</span> </a>
+
+</section>
