@@ -1,1 +1,34 @@
+<<<<<<< HEAD
 <app-new-project-form></app-new-project-form>
+=======
+<div [class]="newClass">
+  <div class="top">&nbsp;</div>
+  <div>
+    <h3>NUEVO PROYECTO:</h3>
+    <section>
+      <form>
+        <label>Identificador</label>
+        <input name="id"
+               value="idNuevo"
+               type="text"
+               [(ngModel)]="idNuevo" />
+
+        <label>Nombre</label>
+        <input name="nombre"
+               value="nombreNuevo"
+               type="text"
+               [(ngModel)]="nombreNuevo" />
+
+
+        <input value="Crear proyecto"
+               type="submit"
+               (click)="saveProject()" />
+      </form>
+
+    </section>
+  </div>
+  <div *ngIf="mensajeVista!=''">
+    <h2>{{mensajeVista}}</h2>
+  </div>
+</div>
+>>>>>>> 161a7b4616de2911258995cd1bf64d25d2a1914a

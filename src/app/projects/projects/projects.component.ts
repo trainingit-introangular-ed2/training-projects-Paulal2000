@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import { Component, Input, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { ProjectsService } from './projects.service';
+=======
+import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../environments/environment';
+>>>>>>> 161a7b4616de2911258995cd1bf64d25d2a1914a
 
 let projects = environment.projects;
 
@@ -11,16 +16,25 @@ let projects = environment.projects;
 } )
 export class ProjectsComponent implements OnInit {
   public projectsClass = 'content';
+<<<<<<< HEAD
   @Input() public filterClass = 'content';
   @Input() public listaProjects: { id: number, name: string }[];
   @Input() public mensajeVista = '';
 
   constructor(private projectsService: ProjectsService) { }
+=======
+  public listaClass = 'listaProyectos';
+  public idSelected: number = -1;
+  public listaProjects: { id: number, name: string }[];
+
+  constructor() { }
+>>>>>>> 161a7b4616de2911258995cd1bf64d25d2a1914a
 
   ngOnInit() {
     this.listaProjects = projects;
   }
 
+<<<<<<< HEAD
   public onFiltrar( id2: number ) {
 
     alert( "vamos a filtrar" );
@@ -53,5 +67,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   
+=======
+>>>>>>> 161a7b4616de2911258995cd1bf64d25d2a1914a
 
 }
