@@ -10,7 +10,7 @@ let projects = environment.projects;
   styleUrls: ['./viewer-project-form.component.css']
 })
 export class ViewerProjectFormComponent implements OnInit {
-  @Input()  public projectId: number;
+  @Input() public projectId: number;
   @Input() public listaProjects: { id: number, name: string }[];
   @Input() public projectName = '';
   @Input() public mensajeError = '';

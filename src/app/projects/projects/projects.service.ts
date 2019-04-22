@@ -11,9 +11,12 @@ export class ProjectsService {
 
   public listarProyectos = (): { id: number, name: string }[] => environment.projects;
 
-  public filtrarProyecto( filtros: any ) {
-    return environment.projects.filter( project => project.name.toLowerCase().includes( filtros.name.toLowerCase() ) );
+  public filtrarProyecto( filtro: any ) {
+    return environment.projects.filter( project => project.name.toLowerCase().includes( filtro.name.toLowerCase() ) );
   }
 
+  public creaProyecto( proyecto: { id: number, name: string } ) {
+    environment.projects.push( proyecto );
+  }
 
 }

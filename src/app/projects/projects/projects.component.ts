@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { ProjectsService } from './projects.service';
 
-let projects = environment.projects;
 
 @Component( {
   selector: 'app-projects',
@@ -10,20 +9,16 @@ let projects = environment.projects;
   styleUrls: ['./projects.component.css']
 } )
 export class ProjectsComponent implements OnInit {
+  public projectsClass = 'content';
   public listaProjects: { id: number, name: string }[];
   public mensajeVista = '';
 
   constructor( private projectsService: ProjectsService ) { }
 
-
-
   ngOnInit() {
-    this.listaProjects = projects;
+    this.listaProjects = environment.projects;
   }
-
-
-  public filtrarProyPorNombre( filtro: any ) {
-    alert( "Filtrando" );
+  public filtrarProyPorNombre( filtro: string ) {
     this.listaProjects = this.projectsService.filtrarProyecto( filtro );
   }
 
