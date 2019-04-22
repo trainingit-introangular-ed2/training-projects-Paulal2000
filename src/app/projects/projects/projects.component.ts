@@ -22,7 +22,8 @@ export class ProjectsComponent implements OnInit {
   }
 
 
-  public filtrarProyectos( filtro: any ) {
+  public filtrarProyPorNombre( filtro: any ) {
+    alert( "Filtrando" );
     this.listaProjects = this.projectsService.filtrarProyecto( filtro );
   }
 

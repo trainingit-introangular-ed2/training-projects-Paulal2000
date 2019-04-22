@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class FilterProjectsFormComponent implements OnInit {
   @Input() public filterClass = 'content';
   public filtroName: string;
-  @Output() filtrarProyPorNombre = new EventEmitter();
+  @Output() filtrarProyPorNombre = new EventEmitter<string>();
 
   constructor() { }
 
