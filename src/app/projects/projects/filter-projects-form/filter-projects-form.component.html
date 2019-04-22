@@ -3,22 +3,13 @@
   <div>
     <h3>FILTRO:</h3>
     <section>
-      <form>
-        <label>Identificador inicial</label>
-        <input name="id1"
-               [value]="id1"
-               type="text" />
-
-        <label>Identificador final</label>
-        <input name="id2"
-               [value]="id2"
-               type="text" />
-
-
-        <input value="filtrar"
-               type="button"
-               (click)="filtrar.emit(2)" />
-      </form>
+      <fieldset>
+        <label for="name">Nombre del proyecto:</label>
+        <input name="name"
+               type="text"
+               [(ngModel)]="filtroName"
+               (keyup)="filtrarProyPorNombre.emit({name: filtroName})" />
+      </fieldset>
 
     </section>
   </div>
