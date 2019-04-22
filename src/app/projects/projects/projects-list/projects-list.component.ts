@@ -7,8 +7,8 @@ import { ProjectsService } from '../projects.service';
   styleUrls: ['./projects-list.component.css']
 })
 export class ProjectsListComponent implements OnInit {
-  @Input() public listaClass = 'listaProyectos';
-  @Input() public idSelected: number = -1;
+  public listaClass = 'listaProyectos';
+  public idSelected: number = -1;
   @Input() public listaProjects: { id: number, name: string }[];
 
   constructor(private projectsService: ProjectsService) { }
