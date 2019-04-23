@@ -10,7 +10,7 @@ export class NewProjectFormComponent implements OnInit {
   public idNuevo: number;
   @Input() public mensajeVista: string;
 
-  public newClass = 'content';
+  
 
   @Output() public saveProject = new EventEmitter<{ id:number, name:string }>();
 

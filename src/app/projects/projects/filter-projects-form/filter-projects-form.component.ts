@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 
 @Component( {
@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./filter-projects-form.component.css']
 } )
 export class FilterProjectsFormComponent implements OnInit {
-  @Input() public filterClass = 'content';
+  public filterClass = 'content';
   public filtroName: string;
   @Output() filtrarProyPorNombre = new EventEmitter<string>();
 

@@ -1,7 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { environment } from '../../../../environments/environment';
- 
-let projects = environment.projects; 
+import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from '../../../projects/projects/projects.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,12 +8,12 @@ let projects = environment.projects;
 })
 export class DashboardComponent implements OnInit {
 
-  @Input() public numProjects: number;
+  public numProjects: number;
 
-  constructor() { }
+  constructor(private projectsService: ProjectsService) { }
 
   ngOnInit() {
-    this.numProjects = projects.length;
+    this.numProjects = this.projectsService.listarProyectos().length;
   }
 
 }

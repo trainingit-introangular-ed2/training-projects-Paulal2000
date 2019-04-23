@@ -7,7 +7,6 @@ import { ProjectsService } from '../projects.service';
   styleUrls: ['./projects-list.component.css']
 })
 export class ProjectsListComponent implements OnInit {
-  public listaClass = 'listaProyectos';
   public idSelected: number = -1;
   @Input() public listaProjects: { id: number, name: string }[];
 

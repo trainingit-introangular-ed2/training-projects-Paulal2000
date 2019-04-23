@@ -1,30 +1,28 @@
-<div [class]="newClass">
-  <div class="top">&nbsp;</div>
-  <div>
-    <h3>NUEVO PROYECTO:</h3>
-    <section>
-      <form>
-        <label>Identificador</label>
-        <input name="id"
-               value="idNuevo"
-               type="text"
-               [(ngModel)]="idNuevo" />
+<div class="top">&nbsp;</div>
+<div>
+  <h3>NUEVO PROYECTO:</h3>
+  <section>
+    <form>
+      <label>Identificador</label>
+      <input name="id"
+             value="idNuevo"
+             type="text"
+             [(ngModel)]="idNuevo" />
 
-        <label>Nombre</label>
-        <input name="nombre"
-               value="nombreNuevo"
-               type="text"
-               [(ngModel)]="nombreNuevo" />
+      <label>Nombre</label>
+      <input name="nombre"
+             value="nombreNuevo"
+             type="text"
+             [(ngModel)]="nombreNuevo" />
 
 
-        <input value="Crear proyecto"
-               type="button"
-               (click)="saveProject.emit({id:idNuevo, name: nombreNuevo})" />
-      </form>
-
-    </section>
-  </div>
-  <div *ngIf="mensajeVista!=''">
-    <h2>{{mensajeVista}}</h2>
-  </div>
+      <input style="font-size: 0.8em"
+             value="Crear proyecto"
+             type="button"
+             (click)="saveProject.emit({id:idNuevo, name: nombreNuevo})" />
+    </form>
+  </section>
+</div>
+<div *ngIf="mensajeVista!=''">
+  <h2>{{mensajeVista}}</h2>
 </div>
