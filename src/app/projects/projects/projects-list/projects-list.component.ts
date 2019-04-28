@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProjectsService } from '../projects.service';
+
 
 @Component({
   selector: 'app-projects-list',
@@ -8,12 +8,12 @@ import { ProjectsService } from '../projects.service';
 })
 export class ProjectsListComponent implements OnInit {
   public idSelected: number = -1;
-  @Input() public listaProjects: { id: number, name: string }[];
+  @Input() public listaProjects$: any;
 
-  constructor(private projectsService: ProjectsService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.listaProjects = this.projectsService.listarProyectos();
+
   }
 
 }

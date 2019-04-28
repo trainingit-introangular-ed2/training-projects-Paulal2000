@@ -43,7 +43,7 @@ export class NewprojectComponent implements OnInit {
     let listaProjects = this.projectsService.listarProyectos();
 
     //Chequeamos si el ID existe
-    for ( let index = 0; index < listaProjects.length; index++ ) {
+    for ( let index = 0; index < Number(this.projectsService.numProyectos); index++ ) {
       var identificador = listaProjects[index]["id"];
       if (identificador==proyecto.id) {
         noGuardamos = true;

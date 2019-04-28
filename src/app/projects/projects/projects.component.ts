@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments/environment';
 import { ProjectsService } from './projects.service';
 
 
@@ -10,16 +9,16 @@ import { ProjectsService } from './projects.service';
 } )
 export class ProjectsComponent implements OnInit {
   public projectsClass = 'content';
-  public listaProjects: { id: number, name: string }[];
+  public listaProjects$: any;
   public mensajeVista = '';
 
   constructor( private projectsService: ProjectsService ) { }
 
   ngOnInit() {
-    this.listaProjects = environment.projects;
+    this.listaProjects$ = this.projectsService.listarProyectos();
   }
   public filtrarProyPorNombre( filtro: string ) {
-    this.listaProjects = this.projectsService.filtrarProyecto( filtro );
+    this.listaProjects$ = this.projectsService.filtrarProyecto( filtro );
   }
 
 

@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProjectsRoutingModule } from './projects-routing.module';
@@ -7,6 +8,7 @@ import { NewProjectFormComponent } from './projects/newproject/new-project-form/
 import { NewprojectComponent } from './projects/newproject/newproject.component';
 import { ProjectsListComponent } from './projects/projects-list/projects-list.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ProjectsService } from './projects/projects.service';
 import { ViewerProjectFormComponent } from './projects/viewerproject/viewer-project-form/viewer-project-form.component';
 import { ViewerprojectComponent } from './projects/viewerproject/viewerproject.component';
 
@@ -15,7 +17,7 @@ import { ViewerprojectComponent } from './projects/viewerproject/viewerproject.c
   imports: [
     CommonModule,
     ProjectsRoutingModule,
-    FormsModule
-  ]
+    FormsModule, HttpClientModule
+  ],providers: [ProjectsService]
 } )
 export class ProjectsModule { }

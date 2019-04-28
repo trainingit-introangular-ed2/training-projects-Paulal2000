@@ -8,12 +8,12 @@ import { ProjectsService } from '../../../projects/projects/projects.service';
 })
 export class DashboardComponent implements OnInit {
 
-  public numProjects: number;
+  public numProjects$: number;
 
   constructor(private projectsService: ProjectsService) { }
 
   ngOnInit() {
-    this.numProjects = this.projectsService.listarProyectos().length;
+    this.numProjects$ = Number(this.projectsService.numProyectos());
   }
 
 }

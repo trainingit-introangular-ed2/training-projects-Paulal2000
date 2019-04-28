@@ -1,7 +1,7 @@
 <div class="top">&nbsp;</div>
 <h3>LISTA DE PROYECTOS:</h3>
 <section>
-  <div *ngFor="let listPro of listaProjects">
+  <div *ngFor="let listPro of listaProjects$ | async">
     <input name="listPro.id"
            [value]="listPro.id"
            type="radio"
