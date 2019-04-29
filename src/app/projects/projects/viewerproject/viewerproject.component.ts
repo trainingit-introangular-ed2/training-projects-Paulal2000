@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component( {
+@Component({
   selector: 'app-viewerproject',
   templateUrl: './viewerproject.component.html',
   styleUrls: ['./viewerproject.component.css']
-} )
+})
 export class ViewerprojectComponent implements OnInit {
+  constructor() {}
 
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

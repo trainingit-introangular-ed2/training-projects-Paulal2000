@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProjectsService } from '../../../projects/projects/projects.service';
 
 @Component({
@@ -7,13 +7,11 @@ import { ProjectsService } from '../../../projects/projects/projects.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  @Input() numProjects$: any;
 
-  public numProjects$: number;
-
-  constructor(private projectsService: ProjectsService) { }
+  constructor(private projectsService: ProjectsService) {}
 
   ngOnInit() {
-    this.numProjects$ = Number(this.projectsService.numProyectos());
+    this.numProjects$ = this.projectsService.numProyectos();
   }
-
 }

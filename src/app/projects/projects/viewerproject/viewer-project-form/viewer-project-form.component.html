@@ -1,6 +1,8 @@
 <div *ngIf="mensajeError==''">
   <h2>Proyecto de identificador: {{ projectId }}</h2>
-  <h3>{{ projectName }}</h3>
+  <div *ngFor="let p of proyecto$ | async">
+    <h3>{{p.name}}</h3>
+  </div>
 </div>
 <div *ngIf="mensajeError!=''">
   <h2>{{mensajeError}}</h2>
