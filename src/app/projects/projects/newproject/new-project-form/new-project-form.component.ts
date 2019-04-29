@@ -11,7 +11,7 @@ export class NewProjectFormComponent implements OnInit {
   @Input() public mensajeVista: string;
   @Input() public idCreado$: number;
 
-  @Output() public saveProject = new EventEmitter<{ id: number; name: string }>();
+  @Output() public saveProject = new EventEmitter();
 
   constructor() {}
 
