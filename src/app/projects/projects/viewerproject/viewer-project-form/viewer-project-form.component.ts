@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Proyecto } from '../../../models/proyecto';
 import { ProjectsService } from '../../projects.service';
-import { Proyecto } from '../models/proyecto';
 
 
 @Component( {
