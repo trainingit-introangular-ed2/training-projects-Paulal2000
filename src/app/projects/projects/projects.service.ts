@@ -51,7 +51,7 @@ export class ProjectsService {
     let project: Project = { _id: null, name: '' };
 
     if ( proyecto != null ) {
-      project._id = proyecto.id;
+      //project._id = proyecto.id;
       project.name = proyecto.name
 
     }
