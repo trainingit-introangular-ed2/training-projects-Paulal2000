@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Proyecto } from '../models/proyecto';
 import { ProjectsService } from './projects.service';
 
 
@@ -9,7 +11,7 @@ import { ProjectsService } from './projects.service';
 } )
 export class ProjectsComponent implements OnInit {
   public projectsClass = 'content';
-  public listaProjects$: any;
+  public listaProjects$: Observable<Proyecto[]>;
   public mensajeVista = '';
 
   constructor( private projectsService: ProjectsService ) { }

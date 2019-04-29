@@ -41,8 +41,9 @@ export class ProjectsService {
     return this.httpClient.get( this.urlProjectsApi ).pipe( map( ( proyectos: any ) => proyectos.length ) );
   }
 
-  public filtrarProyecto( filtro: any ) {
-    return this.httpClient.get( this.urlProjectsApi ).pipe( map( ( proyectos: any ) => proyectos.filter( project => project.name.toLowerCase().includes( filtro.name.toLowerCase() ) ) ) );
+  public filtrarProyecto( filtro: any ): Observable<Proyecto[]> {
+    let projects: any = this.httpClient.get( this.urlProjectsApi ).pipe( map( ( proyectos: any ) => proyectos.filter( project => project.name.toLowerCase().includes( filtro.name.toLowerCase() ) ) ) );
+    return Observable.create( this.convierteParaVista( projects ) );
   }
 
   public creaProyecto( proyecto: any ) {

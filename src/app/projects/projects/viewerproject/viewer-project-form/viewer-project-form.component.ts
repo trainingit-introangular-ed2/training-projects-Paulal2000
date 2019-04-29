@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ProjectsService } from '../../projects.service';
+import { Proyecto } from '../models/proyecto';
 
 
 @Component( {
@@ -10,7 +12,7 @@ import { ProjectsService } from '../../projects.service';
 } )
 export class ViewerProjectFormComponent implements OnInit {
   @Input() public projectId: number;
-  @Input() public listaProjects: any;
+  @Input() public listaProjects$: Observable<Proyecto[]>;
   @Input() public projectName = '';
   @Input() public mensajeError = '';
   constructor( activateRoute: ActivatedRoute, private projectsService: ProjectsService ) {
@@ -22,12 +24,12 @@ export class ViewerProjectFormComponent implements OnInit {
 
   ngOnInit() {
 
-    this.listaProjects = this.projectsService.listarProyectos();
+    this.listaProjects$ = this.projectsService.listarProyectos();
 
-    for ( let index = 0; index < this.listaProjects.length; index++ ) {
-      var id = this.listaProjects[index]["id"];
+    for ( let index = 0; index < Number( this.projectsService.numProyectos() ); index++ ) {
+      var id = this.listaProjects$[index]["id"];
       if ( id == this.projectId ) {
-        this.projectName = this.listaProjects[index]["name"];
+        this.projectName = this.listaProjects$[index]["name"];
       }
     };
   }
