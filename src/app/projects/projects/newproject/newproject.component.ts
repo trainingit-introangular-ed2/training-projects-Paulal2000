@@ -16,14 +16,14 @@ export class NewprojectComponent implements OnInit {
     this.mensajeVista = '';
   }
 
-  public saveProject( proyecto: { _id: number, name: string } ) {
+  public saveProject( proyecto: { id: number, name: string } ) {
 
     let noGuardamos: boolean = false;
 
     //Chequeamos datos válidos
     let nombre = String( proyecto.name );
 
-    if ( !( proyecto._id > 0 ) ) {
+    if ( !( proyecto.id > 0 ) ) {
       noGuardamos = true;
       this.mensajeVista = 'El proyecto no se ha creado: el identificador introducido no es válido';
     }
@@ -33,7 +33,7 @@ export class NewprojectComponent implements OnInit {
       this.mensajeVista = 'El proyecto no se ha creado: el nombre introducido no es válido';
     }
 
-    if ( !( proyecto._id > 0 ) ) {
+    if ( !( proyecto.id > 0 ) ) {
       if ( proyecto.name.length === 0 ) {
         noGuardamos = true;
         this.mensajeVista = 'El proyecto no se ha creado: el identificador y nombre introducidos no son válidos';
@@ -45,7 +45,7 @@ export class NewprojectComponent implements OnInit {
     //Chequeamos si el ID existe
     for ( let index = 0; index < Number( this.projectsService.numProyectos ); index++ ) {
       var identificador = listaProjects[index]["id"];
-      if ( identificador == proyecto._id ) {
+      if ( identificador == proyecto.id ) {
         noGuardamos = true;
         this.mensajeVista = 'El proyecto no se ha creado: el identificador introducido ya existe';
       }

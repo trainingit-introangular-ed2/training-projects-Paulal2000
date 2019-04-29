@@ -12,7 +12,7 @@ export class NewProjectFormComponent implements OnInit {
 
 
 
-  @Output() public saveProject = new EventEmitter<{ _id: number, name: string }>();
+  @Output() public saveProject = new EventEmitter<{ id: number, name: string }>();
 
   constructor() { }
 

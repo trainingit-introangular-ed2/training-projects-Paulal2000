@@ -25,7 +25,7 @@ export class ViewerProjectFormComponent implements OnInit {
     this.listaProjects = this.projectsService.listarProyectos();
 
     for ( let index = 0; index < this.listaProjects.length; index++ ) {
-      var id = this.listaProjects[index]["_id"];
+      var id = this.listaProjects[index]["id"];
       if ( id == this.projectId ) {
         this.projectName = this.listaProjects[index]["name"];
       }

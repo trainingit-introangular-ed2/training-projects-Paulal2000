@@ -2,8 +2,8 @@
 <h3>LISTA DE PROYECTOS:</h3>
 <section>
   <div *ngFor="let listPro of listaProjects$ | async">
-    <input name="listPro._id"
-           [value]="listPro._id"
+    <input name="listPro.id"
+           [value]="listPro.id"
            type="radio"
            [(ngModel)]="idSelected" />
     <span>{{listPro.name}}</span>
