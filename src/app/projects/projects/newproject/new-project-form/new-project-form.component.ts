@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-new-project-form',
@@ -10,6 +11,8 @@ export class NewProjectFormComponent implements OnInit {
   public idNuevo: number;
   @Input() public mensajeVista: string;
   @Input() public idCreado$: number;
+  @Input() public formGroup: FormGroup;
+  @Input() public getError: Function;
 
   @Output() public saveProject = new EventEmitter();
 

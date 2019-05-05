@@ -1,27 +1,29 @@
 <div class="top">&nbsp;</div>
-<div>
-  <h3>NUEVO PROYECTO:</h3>
-  <section>
-    <form>
+<form [formGroup]="formGroup">
+  <div>
+    <h3>NUEVO PROYECTO:</h3>
+    <section>
+
       <label>Identificador</label>
 
       <label>Nombre</label>
-      <input name="nombre"
-             value="nombreNuevo"
-             type="text"
-             [(ngModel)]="nombreNuevo" />
+      <input name="name"
+             formControlName="name"
+             type="text" />
 
 
-      <input style="font-size: 0.8em"
-             value="Crear proyecto"
-             type="button"
-             (click)="saveProject.emit({name: nombreNuevo})" />
-    </form>
-  </section>
-</div>
-<div *ngIf="mensajeVista!=''">
-  <h2>{{mensajeVista}}</h2>
-</div>
-<div [hidden]="!idCreado$">
-  <h2>Se ha creado el proyecto con identificador: {{idCreado$ | async}}</h2>
-</div>
+      <button style="font-size: 0.8em"
+              [disabled]="formGroup.invalid"
+              type="button"
+              (click)="saveProject.emit()">Crear proyecto</button>
+
+    </section>
+  </div>
+  <div *ngFor="let error of getError('name')">
+    <h2>{{error}}</h2>
+    <br>
+  </div>
+  <div [hidden]="!idCreado$">
+    <h2>Se ha creado el proyecto con identificador: {{idCreado$ | async}}</h2>
+  </div>
+</form>

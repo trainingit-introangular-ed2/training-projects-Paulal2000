@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { ProjectsService } from './../projects.service';
 
 @Component({
@@ -9,26 +10,50 @@ import { ProjectsService } from './../projects.service';
 export class NewprojectComponent implements OnInit {
   public mensajeVista: string;
   public idCreado$: any;
+  public formGroup: FormGroup;
 
-  constructor(private projectsService: ProjectsService) {}
+  private longitudMinima = 3;
+
+  constructor(private projectsService: ProjectsService, private formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.mensajeVista = '';
+    this.initForm();
   }
 
-  public saveProject(proyecto: any) {
-    let noGuardamos = false;
+  private initForm() {
+    this.formGroup = this.formBuilder.group({
+      name: ['', [this.validaNombre.bind(this)]]
+    });
+  }
 
-    this.mensajeVista = '';
+  private validaNombre(control: AbstractControl) {
+    const name = control.value;
 
-    //Chequeamos datos válidos
-    if (proyecto.name === undefined) {
-      noGuardamos = true;
-      this.mensajeVista = 'El proyecto no se ha creado: el nombre introducido no es válido';
+    let errors = null;
+
+    if (name === undefined) {
+      errors = { ...errors, nombreVacio: 'El proyecto no se ha creado: el nombre introducido no es válido' };
     }
 
-    if (noGuardamos === false) {
-      this.idCreado$ = this.projectsService.creaProyecto(proyecto);
+    if (name.length < this.longitudMinima) {
+      errors = { ...errors, longitudMinima: 'El nombre ha de tener por lo menos ' + this.longitudMinima + ' caracteres' };
     }
+
+    return errors;
+  }
+
+  public getError(controlName: string): Array<string> {
+    const error = Array<string>();
+    const control = this.formGroup.get(controlName);
+    if (control.dirty && control.errors != null) {
+      for (const tipoError of Object.getOwnPropertyNames(control.errors)) {
+        error.push(control.errors[tipoError]);
+      }
+    }
+    return error;
+  }
+
+  public saveProject() {
+    this.idCreado$ = this.projectsService.creaProyecto(this.formGroup.value);
   }
 }
