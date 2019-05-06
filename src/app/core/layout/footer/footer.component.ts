@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from '../../../projects/projects/store.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class FooterComponent implements OnInit {
+  public mensajePie$: any;
 
-  constructor() { }
+  constructor(private storeService: StoreService) {}
 
   ngOnInit() {
+    this.mensajePie$ = this.storeService.select$();
   }
-
 }
